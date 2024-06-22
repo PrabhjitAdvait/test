@@ -12,8 +12,8 @@ jobs:
     steps:
       - name: check rerun
         run: |
-          if [ "$GITHUB_RUN_ATTEMPT" -gt 1 ] && [${{ inputs.STACK }} == "dev"]; then
-            echo "This is a rerun."
+          if [ "$GITHUB_RUN_ATTEMPT" -gt 1 ] && [${{ inputs.STACK }} == "main"]; then
+            echo "This is a rerun on the main branch"
             exit 1
           else
             echo "all good"
