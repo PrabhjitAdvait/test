@@ -14,5 +14,5 @@ jobs:
             echo "This is a rerun."
             exit 1
           else
-            echo "No re-runs for you. Go away."
+            echo "Not a rerun"
           fi
