@@ -17,4 +17,5 @@ jobs:
             exit 1
           else
             echo "all good"
+            echo ${{ inputs.STACK }} 
           fi
