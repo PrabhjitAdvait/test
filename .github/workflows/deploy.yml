@@ -12,6 +12,4 @@ jobs:
         run: |
           if [ "$GITHUB_RUN_ATTEMPT" -gt 1 ]; then
             echo "This is a rerun."
-          else
-            echo "Not a rerun"
           fi
