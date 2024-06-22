@@ -1,0 +1,13 @@
+name: Deploy
+on:
+  push:
+    branches: 
+      - dev
+    paths:
+      - dev/**
+
+jobs:
+  dev:
+    uses: ./.github/workflows/deploy.yml
+    with:
+      STACK: dev
