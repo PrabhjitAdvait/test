@@ -1,0 +1,17 @@
+on:
+  workflow_call:
+
+jobs:
+  deploy:
+    runs-on: 
+      - self-hosted 
+
+    steps:
+      - name: check rerun
+        run: |
+          if [ "$GITHUB_RUN_ATTEMPT" -gt 1 ]; then
+            echo "This is a rerun."
+            exit 1
+          else
+            echo "No re-runs for you. Go away."
+          fi
