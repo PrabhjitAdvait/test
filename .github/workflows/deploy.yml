@@ -1,7 +1,9 @@
 on:
-  push:
-    branches:
-      - main
+  workflow_call:
+    inputs:
+      STACK:
+        required: true
+        type: string
 jobs:
   deploy:
     runs-on: 
@@ -10,7 +12,7 @@ jobs:
     steps:
       - name: check rerun
         run: |
-          if [ "$GITHUB_RUN_ATTEMPT" -gt 1 ]; then
+          if [ "$GITHUB_RUN_ATTEMPT" -gt 1 ] && [${{ inputs.STACK }} == "dev"]; then
             echo "This is a rerun."
             exit 1
           fi
