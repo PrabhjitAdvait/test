@@ -15,4 +15,6 @@ jobs:
           if [ "$GITHUB_RUN_ATTEMPT" -gt 1 ] && [${{ inputs.STACK }} == "dev"]; then
             echo "This is a rerun."
             exit 1
+          else
+            echo "all good"
           fi
